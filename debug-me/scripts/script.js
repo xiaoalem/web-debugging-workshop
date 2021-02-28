@@ -22,4 +22,8 @@ function addRandomFact() {
 
   // Pick a random fact.
   const fact = facts[Math.floor(Math.random() * facts.length)];
+  console.log(fact);
+
+  const factContainer = document.getElementById('fact-container');
+  factContainer.innerText = fact;
 }

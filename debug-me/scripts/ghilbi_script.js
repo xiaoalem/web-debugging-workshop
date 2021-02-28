@@ -11,12 +11,15 @@ const onload = () => {
   app.appendChild(container);
 
   // Are we sure that's the right endpoint?
-  fetch('https://ghibliapi.herokuapp.com/film')
-    .then((data) => {
+  fetch('https://ghibliapi.herokuapp.com/films')
+    .then((response) => {
+      console.log(response);
       // Work with JSON data here
       // Wait a minute, how do we access the API response? What does 'data' look like? 
       // Let's console.log here!
-
+      return response.json();
+    })
+    .then((data) => {
       data.forEach((film) => {
         console.log(film.title);
 
